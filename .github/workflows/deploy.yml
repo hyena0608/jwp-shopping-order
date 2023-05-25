@@ -19,9 +19,9 @@ jobs:
           ./gradlew bootjar
       - name: kill 8080 port if exist
         run: |
-          if lsof -i :8080; then
+          if pgrep -f jwp-shopping-order.jar; then
             echo "포트 죽이는 중..."
-            lsof -i :8080 | awk 'NR!=1 {print $2}' | xargs kill -9
+            pgrep -f jwp-shopping-order.jar | awk 'NR!=1 {print $2}' | xargs kill -9
           fi
 
       - name: deploy
