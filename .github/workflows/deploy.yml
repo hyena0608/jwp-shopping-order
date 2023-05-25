@@ -21,7 +21,7 @@ jobs:
         run: |
           if pgrep -f jwp-shopping-order.jar; then
             echo "포트 죽이는 중..."
-            kill -16 $(pgrep -f jwp-shopping-order.jar) 
+            kill -9 $(pgrep -f jwp-shopping-order.jar) 
           fi
 
       - name: deploy
