@@ -26,4 +26,4 @@ jobs:
 
       - name: deploy
         run: |
-          nohup java -jar build/libs/jwp-shopping-order.jar &
+          nohup java -jar build/libs/jwp-shopping-order.jar & 2>> /home/ubuntu/build_error.log
