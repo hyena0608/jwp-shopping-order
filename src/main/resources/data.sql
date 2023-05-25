@@ -31,9 +31,6 @@ values ('PET보틀-삼각(530ml)', 10000,
 INSERT INTO product(name, price, image_url)
 values ('PET보틀-원형(600ml)', 47500,
         'https://cdn-mart.baemin.com/sellergoods/main/03e63566-5d56-4dc0-9357-2caaeaeebf7e.jpg?h=300&w=300');
-INSERT INTO product(name, price, image_url)
-values ('PET보틀-납작(260ml)', 64200,
-        'https://cdn-mart.baemin.com/sellergoods/main/d07bec18-ce84-41c2-8903-61cbd10712b6.jpg?h=300&w=300');
 
 INSERT INTO member (email, password)
 VALUES ('a@a.com', '1234');
