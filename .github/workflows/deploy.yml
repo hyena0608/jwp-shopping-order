@@ -26,4 +26,4 @@ jobs:
 
       - name: deploy
         run: |
-          java -jar build/libs/jwp-shopping-order.jar &
+          nohup java -jar build/libs/jwp-shopping-order.jar &
