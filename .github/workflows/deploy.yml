@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: change permission
         run: |
-          sudo chown -R ubuntu:ubuntu /home/ubuntu/actions-runner/_work/jwp-shopping-order 
+          chown -R ubuntu:ubuntu /home/ubuntu/actions-runner/_work/jwp-shopping-order 
 
       - uses: actions/checkout@v3
       - name: gradle bootjar
@@ -21,9 +21,9 @@ jobs:
         run: |
           if pgrep -f jwp-shopping-order.jar; then
             echo "포트 죽이는 중..."
-            sudo kill -16 $(pgrep -f jwp-shopping-order.jar) 
+            kill -16 $(pgrep -f jwp-shopping-order.jar) 
           fi
 
       - name: deploy
         run: |
-          sudo java -jar build/libs/jwp-shopping-order.jar &
+          java -jar build/libs/jwp-shopping-order.jar &
