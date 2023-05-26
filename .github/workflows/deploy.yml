@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: change permission
         run: |
-          chown -R ubuntu:ubuntu /home/ubuntu/actions-runner/_work/jwp-shopping-order 
+          sudo chown -R ubuntu:ubuntu /home/ubuntu/actions-runner/_work/jwp-shopping-order 
 
       - name: gradle bootjar
         run: |
@@ -18,11 +18,11 @@ jobs:
           ./gradlew bootjar
       - name: kill 8080 port if exist
         run: |
-          if pgrep -f jwp-shopping-order.jar; then
+          if sudo pgrep -f jwp-shopping-order.jar; then
             echo "포트 죽이는 중..."
-            kill -9 $(pgrep -f jwp-shopping-order.jar) 
+            sudo kill -9 $(pgrep -f jwp-shopping-order.jar) 
           fi
 
       - name: deploy
         run: |
-          nohup java -jar build/libs/jwp-shopping-order.jar & 2>> /home/ubuntu/build_error.log
+          sudo nohup java -jar build/libs/jwp-shopping-order.jar & 2>> /home/ubuntu/build_error.log
