@@ -33,6 +33,7 @@ dependencies {
     swaggerUI 'org.webjars:swagger-ui:4.11.1'
 
     runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33'
 }
 
 tasks.named('test') {
