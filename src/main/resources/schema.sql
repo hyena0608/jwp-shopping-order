@@ -20,3 +20,7 @@ CREATE TABLE IF NOT EXISTS cart_item
     product_id BIGINT NOT NULL,
     quantity   INT    NOT NULL
 );
+
+truncate table product;
+truncate table member;
+truncate table cart_item;
